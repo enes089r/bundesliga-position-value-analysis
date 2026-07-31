@@ -128,7 +128,7 @@ The original 7-region joint Wald test (p = 0.035) sits alone against all three o
 
 The plot below shows the non-FE (between-club, blue) and club-FE (within-club, red) confidence intervals side by side for all seven regions. Two regions — Forward and Goalkeeper — show the blue point sitting outside the red interval, visually confirming these are the only two where the within-club test rules out the between-club magnitude; for the other five, including Central Midfield, the blue point falls inside the red interval.
 
-![Non-FE vs. club-FE coefficient comparison](coef_comparison.png)
+![Non-FE vs. club-FE coefficient comparison](python/coef_comparison.png)
 
 ---
 
@@ -184,11 +184,14 @@ The plot below shows the non-FE (between-club, blue) and club-FE (within-club, r
 ## Structure
 
 ```
-pipeline.sql          — full data-prep pipeline (single, idempotent script)
-checks.sql            — diagnostic / data-quality queries
-python/main.py        — model specifications, VIF, influence diagnostics, club-FE and Mundlak models
-coef_comparison.png   — non-FE vs. club-FE coefficient comparison plot
-CHANGELOG.md          — full revision history: what earlier drafts got wrong and how it was found
+sql/pipeline.sql            — full data-prep pipeline (single, idempotent script)
+sql/checks.sql              — diagnostic / data-quality queries
+sql/schema.sql              — DDL for the five source tables
+python/main.py              — model specifications, VIF, influence diagnostics, club-FE and Mundlak models
+python/requirements.txt     — Python dependencies
+python/coef_comparison.png  — non-FE vs. club-FE coefficient comparison plot
+python/drafts/              — exploratory scripts kept for reference; not part of the analysis
+CHANGELOG.md                — full revision history: what earlier drafts got wrong and how it was found
 ```
 
 ---
